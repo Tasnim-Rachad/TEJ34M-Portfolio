@@ -1,0 +1,52 @@
+<DOCTYPE! html>
+	<html>
+		<head>
+		<meta charset="utf-8">	
+		<title> Portfolio: les meilleurs travaux de Tasnim! </title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	    </head>
+
+	<!-- pas de barre de défilement avec overflow: hidden -->
+	<body style="height: 100%; overflow: hidden;"> 
+		<div>
+			<div class="banniere" style="background-color:orange;">  </div>
+			<div class="banniere" style="background-color:darkorange;">  </div>
+			<div class="banniere" style="background-color:orangered;">  </div>
+			<div class="banniere" style="background-color:red;"> </div>
+		</div>
+
+
+		<!-- Pour centrer un div https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div -->
+		<div style="width: 100%; margin: 5em auto 0; text-align: center;">
+			<h1 style="font-size: 58px;">TEJ34M: Portfolio</h1>
+			<h1 style="font-size: 38px;">Tasnim Rachad</h1>
+			<h3>Bonjour, je m'appelle Tasnim et je suis en onzième année.</h3> <br>
+			<p>Bienvenue, joueur. <br><br> Tu te trouves sur la page principale de mon portfolio, <br> une compilation créative des travaux que je trouve <br> sont les meilleurs que j'ai accomplis au cours du semestre.</p>	
+		</div>
+
+		<div style="width: 100%; margin: 5em auto 0; text-align: center;">
+			<button onclick="window.open('page_principale.html', '_blank');" class="btnClignote">« Appuyez pour commencer la partie »</button>
+		</div>
+
+		<!-- Date et heure comme un VHS view-source:https://www.w3schools.com/js/js_dates.asp ligne 3988 à 4000 -->
+		<script>date=new Date()</script>
+		<!-- Garder la date et l'heure en bas https://stackoverflow.com/questions/526035/how-can-i-position-my-div-at-the-bottom-of-its-container -->
+		<div style="width: 100%; height: 2em; margin-bottom: 0; margin-top: auto; position: absolute; bottom:0;">
+			<span id="date"><script>document.write(date.getFullYear())</script>-<script>document.write(date.getMonth()+1)</script>-<script>document.write(date.getDate())</script></span>
+			<span id="heure"><script>document.write(date.getHours())</script>:<script>document.write(date.getMinutes())</script>:<script>document.write(date.getSeconds())</script></span>
+		</div>
+
+		<script>
+		   // Quand j'appuie sur la barre espace, je veux aller à la page principale
+		   // https://stackoverflow.com/questions/73233242/trigger-a-button-click-when-the-space-bar-is-pressed
+		   document.addEventListener('keyup', handleEspacePrincipale);
+
+		   function handleEspacePrincipale(event) {
+		      if (event.key === ' ') {
+		      	console.log("Je pressé sur la barre espace!");
+		        window.open('introduction.html', '_blank');
+		      }
+		   }
+		</script>
+	</body>
+	</html>

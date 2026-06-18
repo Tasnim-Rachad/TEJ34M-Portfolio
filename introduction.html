@@ -1,0 +1,49 @@
+<DOCTYPE! html>
+	<html>
+		<head>
+		<meta charset="utf-8">	
+		<title> Portfolio: les meilleurs travaux de Tasnim! </title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	    </head>
+
+	<body style="height: 100%; overflow: hidden;"> 
+		<div>
+			<div class="banniere" style="background-color:orange;">  </div>
+			<div class="banniere" style="background-color:darkorange;">  </div>
+			<div class="banniere" style="background-color:orangered;">  </div>
+			<div class="banniere" style="background-color:red;"></div>
+		</div>
+<h1 style="font-size: 40px; margin-left:10%;"> PORTFOLIO: LES MEILLEURS TRAVAUX DE TASNIM!</h1>
+		<div style="width: 100%; margin: 5em auto 0; text-align: center; display: flex;">
+
+		<div>
+		 
+		 <p style= "font-size: 16px; width: 55vw; text-align: justify; padding-left: 2em;"> C’est moi, Tasnim! Je suis en onzième et je suis passionnée des systèmes informatiques et de leur mode d’emploi dans la médecine, de l’anatomie et la physiologie, et des vieux jeux vidéo. J’ai créé ce portfolio afin de compiler mes meilleurs travaux. J’ai pris le cours de TEJ34M pour élargir l’horizon de mes connaissances en technologie. J’ai aussi pris le cours afin d’apprendre en détail les différentes composantes dans l’ordinateur, et la communication entre celui-ci et les périphériques, avec les logiciels, entre le unité central de traitement et les composantes dans la carte mère, et la communication entre un microcontrôleur et l’EDI (Environnement de Développement Intégré). J’ai appris à propos des: Ordinateurs (structure, fonctions, montage + Raspberry Pi), Logiciel (types, et convertisseur dans Excel), Électronique (Arduino et codage dans IDE), Électricité/circuit. J’aime faire des montages intéressants, écrire des algorithmes. Je veux faire des appareils qui servent à la médicine, découvrir les causes spécifiques du DT1 et le fonctionnement/la production de l’insuline.
+		 </p>	</div>
+
+		 <img src="moi.png" style="width: 40vw; height: 30vh; margin: 2% 2% 10%;"></img> 
+	    </div>
+
+	    <div style="width: 100%; margin: -5em auto 0; text-align: center;">
+	    	<button onclick="window.open('demomenu.html', '_blank');" class="btnClignote">« Appuyez pour choisir un projet »</button>
+	    </div>
+
+	    <script>date=new Date()</script>
+	    <div style="width: 100%; height: 2em; margin-bottom: 5; margin-top: auto; color: white;  position: absolute; bottom:0;">
+			<span id="date"><script>document.write(date.getFullYear())</script>-<script>document.write(date.getMonth()+1)</script>-<script>document.write(date.getDate())</script></span>
+			<span id="heure"><script>document.write(date.getHours())</script>:<script>document.write(date.getMinutes())</script>:<script>document.write(date.getSeconds())</script></span>
+		</div>
+		<script>
+		   // Quand j'appuie sur la barre espace, je veux aller à la page principale
+		   // https://stackoverflow.com/questions/73233242/trigger-a-button-click-when-the-space-bar-is-pressed
+		   document.addEventListener('keyup', handleEspacePrincipale);
+
+		   function handleEspacePrincipale(event) {
+		      if (event.key === ' ') {
+		      	console.log("Je pressé sur la barre espace!");
+		        window.open('choisis_ton_projet.html', '_blank');
+		      }
+		   }
+		</script>
+	</body>
+</html>

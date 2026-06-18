@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio: les meilleurs travaux de Tasnim!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body style="height: 100%; overflow: hidden;">
+        <div>
+            <div class="banniere" style="background-color:orange;">  </div>
+            <div class="banniere" style="background-color:darkorange;">  </div>
+            <div class="banniere" style="background-color:orangered;">  </div>
+            <div class="banniere" style="background-color:red;"></div>
+        </div>
+
+        <!-- Tutoriel de la carouselle https://www.youtube.com/watch?v=Xh-wIMqohD0 -->
+        <div id="carousel">
+        <div id="slider">
+            <div class="item" id="projet-1">
+                <h1>Projet Arduino: Glucomètre 3000</h1>
+                <p>Un montage Arduino qui révolutionne le T1D!</p>
+                <button onclick="window.open('travail_1.html', '_blank');" class="btnClignote">« Travail 1 »</button>
+            </div>
+            <div class="item" id="projet-2">
+                <h1>Projet Excel</h1>
+                <p>Un logiciel compte en trois systèmes: Binaire, DEC et HEX. Il peut convertir des nombres entre eux en script VBA!</p>
+                <button onclick="window.open('travail_2.html','_blank');" class="btnClignote">« Travail 2 »</button>
+            </div>
+            <div class="item" id="projet-3">
+                <h1>Montage: Ordinateur</h1>
+                <p>J'ai revelé un défi: monter un ordinateur à partir de vielle pièces!</p>
+                <button onclick="window.open('travail_3.html','_blank');" class="btnClignote">« Travail 3 »</button>
+            </div>
+            <div class="item" id="projet-4">
+                <h1>Montage: Raspberry Pi</h1>
+                <p>J'ai monté Raspberry Pi avec le système d'exploitation Ubuntu! </p>
+                <button onclick="window.open('travail_4.html','_blank');" class="btnClignote">« Travail 4 »</button>
+            </div>
+            <div class="item" id="projet-5">
+                <h1>Algorithme Arduino</h1>
+                <p>Contrôler une RGB dans toutes les couleurs imaginables!</p>
+                <button onclick="window.open('travail_5.html','_blank');" class="btnClignote">« Travail 5 »</button>
+            </div>
+            <div class="item" id="projet-6">
+                <h1>Algorithme Arduino</h1>
+                <p>Utiliser des DELs pour compter en binaire? Impossible - pas pour moi!</p>
+                <button onclick="window.open('travail_6.html','_blank');" class="btnClignote">« Travail 6 »</button>
+            </div>
+            <button id="next">▶</button>
+            <button id="prev">◀</button>
+        </div>
+        </div>
+
+        <script>
+            let items = document.querySelectorAll('#slider .item');
+let active = 3;
+function loadShow(){
+    items[active].style.transform = `none`;
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+    // montrer les projets après
+    let position = 0;
+    for(var i = active + 1; i < items.length; i ++){
+        position++;
+        items[i].style.transform = `translateX(${450*position}px) scale(${1 - 0.2*position}) perspective(16px) rotateY(0.7deg)`;
+        items[i].style.zIndex = -position;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = position > 2 ? 0 : 0.6;
+    }
+    // montrer les projets avant
+     position = 0;
+    for(var i = (active - 1); i >= 0; i --){
+        position++;
+        items[i].style.transform = `translateX(${-450*position}px) scale(${1 - 0.2*position}) perspective(16px) rotateY(-0.7deg)`;
+        items[i].style.zIndex = -position;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = position > 2 ? 0 : 0.6;
+    }
+}
+loadShow();
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+next.onclick = function(){
+    // Si le prochain indice est plus petit que le nombre de titre on passe au prochain
+    // sinon on recommence du départ
+   //active = active + 1 < items.length ?  active + 1 : active;
+    active = active + 1 < items.length ?  active + 1 : 0;
+   loadShow();
+}
+prev.onclick = function(){
+    // Si le prochain indice est plus grand que 0 on passe au prochain
+    // sinon on saute au dernier indice qui est la longueur des items
+    active = active - 1 >= 0 ? active -1 : items.length;
+    loadShow();
+}
+        </script>
+    </body>
+</html>

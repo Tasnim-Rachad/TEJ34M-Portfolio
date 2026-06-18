@@ -1,0 +1,243 @@
+/* Nouvelles Polices */
+@font-face {
+	font-family: New-Machines;
+	src: url('new_machines/New Machines.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: New-Machines-Outline;
+	src: url('new_machines/New Machines Outlines.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* https://www.dafont.com/vcr-osd-mono.charmap?back=bitmap */
+@font-face{
+	font-family: VCR-OSD-MONO;
+	src: url('vcr_osd_mono/VCR_OSD_MONO_1.001.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* https://fonts.google.com/specimen/Press+Start+2P?categoryFilters=Appearance:%2FMonospace%2FMonospace;Feeling:%2FExpressive%2FLoud */
+@font-face{
+	font-family: Press-Start_2P;
+	src: url('Press_Start_2P/PressStart2P-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Toutes les pages */
+body {
+	margin:0;
+	padding: 0;
+
+	background-image: url('bgnd.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+	overflow-x: hidden;
+}
+
+div {
+	margin: 0; 
+	padding: 0;
+}
+
+h1 {
+font-family: Press-Start_2P;
+color: #FFFF00;
+}
+
+p {
+	font-family: VCR-OSD-MONO;
+	font-size: 16pt;
+	color: #FFFF00;
+}
+
+button {
+	font-family: VCR-OSD-MONO;
+	color: #ffffff;
+}
+
+.banniere {
+    width:100vw; /* vw est le pourcentage de la largeur de l'écran */
+    height: 3vh;
+}
+
+/* Mettre la date à gauche et l'heure à droite 
+   https://stackoverflow.com/questions/9303976/how-do-i-align-two-span-elements-one-to-the-left-the-other-one-to-the-right
+   */
+#date {
+	color: #ffffff; 
+	float:left; 
+	width: 200px; 
+	margin-right: auto; 
+	margin-left: 1em; 
+	font-family: Press-Start_2P;"
+}
+
+#heure {
+	color: #ffffff; 
+	float: right; 
+	width: 200px; 
+	margin-right: 1em; 
+	margin-left: auto; 
+	font-family: Press-Start_2P;
+	text-align: right;
+}
+/* Animations */
+
+/* https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3
+   https://stackoverflow.com/questions/4919076/outline-effect-to-text */
+
+@keyframes clignoter {
+  0% {
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+  }
+  50% {
+  	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+  }
+  100% {
+  	text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+  }
+}
+
+/* Styles pour le menu demo */
+#carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+#slider{
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+}
+.item{
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    text-align: center;
+    background-color: rgba(56, 56, 56, 0.5);
+    border-radius: 10px;
+    padding: 110px 20px 60px;
+    transition:  0.5s;
+    left: calc(50% - 150px - 20px);
+    top: 0;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 5px;
+    color: #ffffff;
+    font-family: Press-Start_2P;
+    }
+#next{
+    position: absolute;
+    right: 50px;
+    top: 40%;
+}
+#prev{
+    position: absolute;
+    left: 50px;
+    top: 40%;
+}
+#prev, #next{
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+#prev:hover,
+#next:hover{
+    opacity: 1;
+}
+
+#projet-1 {
+	background-image: linear-gradient(rgba(56, 56, 56, 0.8), rgba(56, 56, 56, 0.8)), url('glucometre.jpg');
+	background-image: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#projet-2 {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.8), rgba(56, 56, 56, 0.8)), url('excellent.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#projet-3 {
+	background-image: linear-gradient(rgba(56, 56, 56, 0.8), rgba(56, 56, 56, 0.8)), url('ordinateur.jpeg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#projet-4 {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.8), rgba(56, 56, 56, 0.8)), url('raspberry-cover.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#projet-5 {
+	background-image: linear-gradient(rgba(56, 56, 56, 0.8), rgba(56, 56, 56, 0.8)), url('purplelight.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#projet-6 {
+	background-image: linear-gradient(rgba(56, 56, 56, 0.8), rgba(56, 56, 56, 0.8)), url('13binary.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Page principale */
+.btnClignote {
+	color: yellow; 
+	background-color: transparent; 
+	outline: none; 
+	border: none; 
+	font-size: 20px; 
+	text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff; 
+	animation: clignoter 2s linear infinite;
+	width: 60%; 
+	height: 60px;
+	/* https://www.w3schools.com/cssref/pr_class_cursor.php */
+	cursor: pointer;
+}
+
+/* Pages de Projet */
+.contenu {
+	background-color: rgba(95, 95, 95, 0.25);
+	width: 70%; 
+	margin: 1em auto 0; 
+	padding: 0.5em 1em 0.5em;
+	text-align: center;
+}
+
+.contenuEntete {
+	margin: 0em auto 0; 
+}
+
+.contenuImage {
+	margin: 9em auto 0;
+	padding-bottom: 1em;
+}
+
+.contenuDescription {
+	margin: 9em auto 0;
+	text-align: justify;
+}
